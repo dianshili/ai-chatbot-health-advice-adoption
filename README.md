@@ -1,91 +1,81 @@
-# Analysis data and code
+# AI chatbot health-advice adoption intention
 
-Analysis-only data and code for the study of AI chatbot health-advice adoption
-intention. This repository is maintained by [dianshili](https://github.com/dianshili).
+This repository provides scored analysis data and code for a longitudinal study
+of AI chatbot health-advice adoption intention. Machine learning compares the
+predictive importance of the study factors, and cross-lagged panel network
+analysis estimates their prospective relationships across two survey waves.
 
-## Data boundary
+## Data and files
 
-The data begin after questionnaire scoring. They contain only the participant-
-level scores and covariates required for the reported machine-learning and
-cross-lagged panel network analyses. They do not contain questionnaire item-
-response matrices, source participant identifiers, unused measures, or programs
-that construct or score measurements. New release identifiers preserve the
-within-participant pairing of the two waves.
+The dataset contains 2,149 participants and 77 analysis fields comprising scored
+measures and covariates. Each row combines a participant's records across the
+two waves. Release identifiers link the analysis data to the original training,
+validation, and test assignments.
 
-- `data/analysis_scores.csv` contains 2,149 records, a release identifier, and 77
-  analysis fields. Empty cells retain the original model-input missingness.
-- `data/ml_partitions.csv` records the original training, validation, and test
-  assignment. Row order within each partition is part of the reproducible input.
-- `data/data_dictionary.csv` describes field labels, wave, domain, model role,
-  and missingness. Construct definitions and response scales are documented in
-  the manuscript's supplementary measurement table.
-- `data/network_nodes.csv` links the two wave-specific columns for each node.
-- `config/analysis.json` contains the retained analysis parameters and field
-  order. Do not change these when reproducing the benchmarks.
-- `benchmarks/` contains aggregate reference results, not fitted objects.
+- [Analysis data](data/analysis_scores.csv) contain the participant-level model inputs.
+- [Data dictionary](data/data_dictionary.csv) documents field labels, waves,
+  domains, model roles, and missingness.
+- [Data partitions](data/ml_partitions.csv) preserve split membership and row
+  order for model fitting and evaluation.
+- [Network nodes](data/network_nodes.csv) pair the wave-specific columns used
+  in the longitudinal network.
+- [Analysis configuration](config/analysis.json) records model parameters,
+  predictor order, and preprocessing settings.
+- [Reference results](benchmarks/) provide model-performance metrics, SHAP
+  importance, network coefficients, centrality estimates, and stability summaries.
 
-## Reproduction
+## Run the analyses
 
-Install the Python packages in `requirements.txt` in a dedicated environment.
-The tested R packages and versions are recorded in `r-packages.txt`.
-
-From this directory, run:
+Install the Python dependencies in [requirements.txt](requirements.txt) and the
+R packages listed in [r-packages.txt](r-packages.txt). Run both scripts from the
+repository directory.
 
 ```sh
 python scripts/reproduce_ml.py
 Rscript scripts/reproduce_clpn.R
 ```
 
-The Python script refits seven models at their retained parameters, calculates
-training/validation/test metrics, and computes grouped interventional TreeSHAP
-for the retained CatBoost model. Training/validation metrics come from a model
-fitted on training data; test metrics come from refitting on training plus
-validation data. It does not rerun the historical hyperparameter searches.
+### Machine learning
 
-The R script performs node-wise 10-fold cross-validated lasso, reconstructs the
-directed coefficient matrix, and calculates expected-influence summaries. It
-uses the same numeric, categorical, missing-value, and standardization rules as
-the original model, starting from already-scored inputs. It also specifies the
-original L'Ecuyer-CMRG random-number generator for cross-validation and bootstrap
-sampling. TreeSHAP contribution values are reproduced unchanged; the diagnostic
-prediction baseline includes CatBoost's global bias.
+The Python script refits seven models using the retained parameters and computes
+their training, validation, and test performance. Training and validation
+metrics use models fitted on the training data. Test metrics use models refitted
+on the combined training and validation data. The script also calculates grouped
+interventional TreeSHAP values and feature importance for CatBoost.
 
-Bootstrap execution is optional and is not part of the default quick run:
+Results are saved in `results/ml/`, including model-performance comparisons,
+test predictions, participant-level SHAP values, feature importance, and
+comparisons with the reference results.
+
+### Longitudinal network
+
+The R script estimates a 30-node directed network using node-wise 10-fold
+cross-validated lasso. It applies the recorded preprocessing and random-number
+settings, calculates cross-lagged coefficients, and derives out-, in-, and
+one-step bridge expected influence.
+
+Results are saved in `results/clpn/`, including standardized model inputs,
+coefficient matrices, centrality estimates, and comparisons with the reference
+results.
+
+### Bootstrap analyses
+
+The following command runs 1,000 nonparametric bootstrap replicates and 1,000
+case-dropping replicates, saving edge summaries and correlation-stability
+coefficients in a separate output directory.
 
 ```sh
-Rscript scripts/reproduce_clpn.R --bootstraps 5 --output results/bootstrap_smoke
 Rscript scripts/reproduce_clpn.R --bootstraps 1000 --output results/bootstrap_full
 ```
 
-The first command tests execution only. It must not be used to report confidence
-intervals or stability coefficients. The second command requests the original
-1,000 nonparametric and 1,000 case-dropping replicates and can take substantial
-time. Only completed checks may be described as reproduced. See `VALIDATION.md`
-for the current test status.
+The replicate count is controlled by `--bootstraps`, and the output location is
+controlled by `--output`.
 
-## Scope of reproducibility
+## Verified results
 
-The package supports analysis from final scores, not independent reconstruction
-of scores or item-level reliability. The default checks compare newly computed
-model metrics, SHAP importance, and network coefficients with the aggregate
-benchmarks. Source-data collection, measurement scoring, the full history of
-model selection, and pixel-identical manuscript figure rendering are outside
-this package.
-
-The current scripts do not regenerate descriptive tables, LOWESS curves and
-their zero crossings, the 500-resample test-metric distributions, two-step bridge
-expected influence, node predictability excluding autoregression, squared
-outgoing influence, or all bootstrap difference-test and stability-curve
-summaries. The presence of an aggregate benchmark does not mean that every
-reported statistic is recalculated by these scripts.
-
-The package does not access the network, the original research folder, or any
-questionnaire database. Outputs are written only under the selected output
-directory. No repository upload or data-publication command is provided.
-
-## Release scope
-
-This release contains scored analysis inputs and downstream code. Original
-questionnaire records, measurement-scoring programs, and the source-identifier
-mapping are not distributed. Removal of source identifiers and item responses
-is not a certification of anonymity.
+Runs from a separate working directory reproduced the seven models' performance
+metrics, SHAP importance values, and main network coefficients within
+floating-point precision. Out-, in-, and one-step bridge expected influence
+also matched the reference results. Detailed checks are recorded in
+[VALIDATION.md](VALIDATION.md), with numerical comparisons in
+[validation_summary.json](validation_summary.json).
