@@ -1,0 +1,383 @@
+{
+  "seed": 20260627,
+  "features": [
+    "t1_ai_chatbot_health_advice_adoption_intention",
+    "t1_ai_chatbot_use_frequency",
+    "t1_fear_of_missing_out_on_generative_ai_technology",
+    "t1_ai_chatbot_use_intensity",
+    "t1_objective_ai_literacy",
+    "t1_subjective_ai_literacy",
+    "t1_cyberchondria",
+    "t1_loneliness",
+    "t1_social_anxiety",
+    "t1_depressive_symptoms",
+    "t1_perceived_ai_deception_risk",
+    "t1_ai_chatbot_algorithmic_content_awareness",
+    "t1_perceived_ai_sycophancy",
+    "t1_perceived_deepfake_risk",
+    "t1_perceived_ai_hallucination",
+    "t1_ai_information_privacy_concern",
+    "t1_perceived_chatbot_performance",
+    "t1_uniqueness_neglect",
+    "t1_ai_directed_verbal_aggressiveness",
+    "t1_self_disclosure",
+    "t1_chatbot_electronic_word_of_mouth",
+    "t1_ai_health_information_exposure",
+    "t1_problem_focused_coping",
+    "t1_emotion_focused_coping",
+    "t1_information_elaboration",
+    "t1_perceived_cognitive_empowerment",
+    "t1_relief_of_health_anxiety",
+    "t1_anger",
+    "t1_ai_chatbot_dependence",
+    "t1_gender",
+    "t1_age",
+    "t1_province_of_residence",
+    "t1_highest_education",
+    "t1_employment_status",
+    "t1_relationship_status",
+    "t1_relationship_satisfaction",
+    "t1_personal_monthly_income",
+    "t1_household_annual_income",
+    "t1_self_reported_physician_diagnosed_condition_obesity_or_high_blood_sugar",
+    "t1_self_reported_physician_diagnosed_condition_hypertension",
+    "t1_self_reported_physician_diagnosed_condition_heart_problems",
+    "t1_self_reported_physician_diagnosed_condition_chronic_lung_disease",
+    "t1_self_reported_physician_diagnosed_condition_arthritis_or_rheumatism",
+    "t1_self_reported_physician_diagnosed_condition_depression_or_anxiety_disorder",
+    "t1_height",
+    "t1_weight",
+    "t1_perceived_social_support"
+  ],
+  "categorical_features": [
+    "t1_ai_chatbot_use_frequency",
+    "t1_gender",
+    "t1_province_of_residence",
+    "t1_highest_education",
+    "t1_employment_status",
+    "t1_relationship_status",
+    "t1_personal_monthly_income",
+    "t1_household_annual_income"
+  ],
+  "outcome": "t2_ai_chatbot_health_advice_adoption_intention",
+  "model_parameters": {
+    "CatBoost": {
+      "iterations": 581,
+      "depth": 10,
+      "learning_rate": 0.008909146881540531,
+      "l2_leaf_reg": 1.0143864537102965,
+      "random_strength": 0.15048254346313697,
+      "rsm": 0.9092758371748044,
+      "border_count": 64,
+      "leaf_estimation_iterations": 4,
+      "subsample": 0.7942534310410608,
+      "bootstrap_type": "Bernoulli",
+      "loss_function": "RMSE",
+      "random_seed": 20260627,
+      "thread_count": 1,
+      "verbose": false,
+      "allow_writing_files": false
+    },
+    "LightGBM": {
+      "objective": "regression",
+      "n_estimators": 415,
+      "learning_rate": 0.008126155573893143,
+      "max_depth": 8,
+      "num_leaves": 86,
+      "min_child_samples": 5,
+      "subsample": 0.6975283240755745,
+      "colsample_bytree": 0.9578090152612272,
+      "reg_alpha": 7.554231028959919,
+      "reg_lambda": 0.012600897728007637,
+      "random_state": 20260627,
+      "n_jobs": 1,
+      "verbosity": -1
+    },
+    "XGBoost": {
+      "objective": "reg:squarederror",
+      "n_estimators": 904,
+      "learning_rate": 0.004869549772712001,
+      "max_depth": 5,
+      "min_child_weight": 0.46954756771351747,
+      "subsample": 0.9295945652658691,
+      "colsample_bytree": 0.892348738818074,
+      "gamma": 0.0005115896406900358,
+      "reg_alpha": 0.008398472327735888,
+      "reg_lambda": 10.891949644256625,
+      "random_state": 20260627,
+      "n_jobs": 1,
+      "verbosity": 0,
+      "tree_method": "hist"
+    },
+    "Random forest": {
+      "n_estimators": 791,
+      "max_depth": null,
+      "min_samples_leaf": 5,
+      "min_samples_split": 6,
+      "max_features": 0.4,
+      "bootstrap": false,
+      "random_state": 20260627,
+      "n_jobs": 1
+    },
+    "Support vector machine": {
+      "C": 0.3092590473115092,
+      "epsilon": 0.233069764523093,
+      "gamma": 0.0030239661676734683,
+      "kernel": "rbf"
+    },
+    "Elastic Net": {
+      "alpha": 0.33533779394000973,
+      "l1_ratio": 0.025264175176488334,
+      "fit_intercept": true,
+      "max_iter": 50000,
+      "random_state": 20260627
+    },
+    "Linear regression": {}
+  },
+  "scaled_models": [
+    "Support vector machine",
+    "Elastic Net",
+    "Linear regression"
+  ],
+  "shap_background_size": 300,
+  "shap_test_size": 323,
+  "network_controls": {
+    "categorical": [
+      "t1_gender",
+      "t1_province_of_residence",
+      "t1_highest_education",
+      "t1_employment_status",
+      "t1_relationship_status",
+      "t1_personal_monthly_income",
+      "t1_household_annual_income"
+    ],
+    "numeric": [
+      "t1_age",
+      "t1_relationship_satisfaction",
+      "t1_height",
+      "t1_weight"
+    ],
+    "binary": [
+      "t1_self_reported_physician_diagnosed_condition_obesity_or_high_blood_sugar",
+      "t1_self_reported_physician_diagnosed_condition_hypertension",
+      "t1_self_reported_physician_diagnosed_condition_heart_problems",
+      "t1_self_reported_physician_diagnosed_condition_chronic_lung_disease",
+      "t1_self_reported_physician_diagnosed_condition_arthritis_or_rheumatism",
+      "t1_self_reported_physician_diagnosed_condition_depression_or_anxiety_disorder"
+    ]
+  },
+  "network_nodes": [
+    {
+      "node": "ADIN",
+      "label": "AI chatbot health-advice adoption intention",
+      "domain": "Outcome",
+      "wave1_column": "t1_ai_chatbot_health_advice_adoption_intention",
+      "wave2_column": "t2_ai_chatbot_health_advice_adoption_intention"
+    },
+    {
+      "node": "GAUF",
+      "label": "AI chatbot use frequency",
+      "domain": "User",
+      "wave1_column": "t1_ai_chatbot_use_frequency",
+      "wave2_column": "t2_ai_chatbot_use_frequency"
+    },
+    {
+      "node": "FOMO",
+      "label": "Fear of missing out on generative AI technology",
+      "domain": "User",
+      "wave1_column": "t1_fear_of_missing_out_on_generative_ai_technology",
+      "wave2_column": "t2_fear_of_missing_out_on_generative_ai_technology"
+    },
+    {
+      "node": "ACUI",
+      "label": "AI chatbot use intensity",
+      "domain": "User",
+      "wave1_column": "t1_ai_chatbot_use_intensity",
+      "wave2_column": "t2_ai_chatbot_use_intensity"
+    },
+    {
+      "node": "OAIL",
+      "label": "Objective AI literacy",
+      "domain": "User",
+      "wave1_column": "t1_objective_ai_literacy",
+      "wave2_column": "t2_objective_ai_literacy"
+    },
+    {
+      "node": "SAIL",
+      "label": "Subjective AI literacy",
+      "domain": "User",
+      "wave1_column": "t1_subjective_ai_literacy",
+      "wave2_column": "t2_subjective_ai_literacy"
+    },
+    {
+      "node": "CYB",
+      "label": "Cyberchondria",
+      "domain": "User",
+      "wave1_column": "t1_cyberchondria",
+      "wave2_column": "t2_cyberchondria"
+    },
+    {
+      "node": "LON",
+      "label": "Loneliness",
+      "domain": "User",
+      "wave1_column": "t1_loneliness",
+      "wave2_column": "t2_loneliness"
+    },
+    {
+      "node": "SANX",
+      "label": "Social anxiety",
+      "domain": "User",
+      "wave1_column": "t1_social_anxiety",
+      "wave2_column": "t2_social_anxiety"
+    },
+    {
+      "node": "CESD",
+      "label": "Depressive symptoms",
+      "domain": "User",
+      "wave1_column": "t1_depressive_symptoms",
+      "wave2_column": "t2_depressive_symptoms"
+    },
+    {
+      "node": "AIDR",
+      "label": "Perceived AI deception risk",
+      "domain": "Agent",
+      "wave1_column": "t1_perceived_ai_deception_risk",
+      "wave2_column": "t2_perceived_ai_deception_risk"
+    },
+    {
+      "node": "APS",
+      "label": "AI-chatbot algorithmic content awareness",
+      "domain": "Agent",
+      "wave1_column": "t1_ai_chatbot_algorithmic_content_awareness",
+      "wave2_column": "t2_ai_chatbot_algorithmic_content_awareness"
+    },
+    {
+      "node": "PAIS",
+      "label": "Perceived AI sycophancy",
+      "domain": "Agent",
+      "wave1_column": "t1_perceived_ai_sycophancy",
+      "wave2_column": "t2_perceived_ai_sycophancy"
+    },
+    {
+      "node": "DFC",
+      "label": "Perceived deepfake risk",
+      "domain": "Agent",
+      "wave1_column": "t1_perceived_deepfake_risk",
+      "wave2_column": "t2_perceived_deepfake_risk"
+    },
+    {
+      "node": "HALL",
+      "label": "Perceived AI hallucination",
+      "domain": "Agent",
+      "wave1_column": "t1_perceived_ai_hallucination",
+      "wave2_column": "t2_perceived_ai_hallucination"
+    },
+    {
+      "node": "AIPC",
+      "label": "AI information privacy concern",
+      "domain": "Agent",
+      "wave1_column": "t1_ai_information_privacy_concern",
+      "wave2_column": "t2_ai_information_privacy_concern"
+    },
+    {
+      "node": "PSC",
+      "label": "Perceived chatbot performance",
+      "domain": "Agent",
+      "wave1_column": "t1_perceived_chatbot_performance",
+      "wave2_column": "t2_perceived_chatbot_performance"
+    },
+    {
+      "node": "UN",
+      "label": "Uniqueness neglect",
+      "domain": "Agent",
+      "wave1_column": "t1_uniqueness_neglect",
+      "wave2_column": "t2_uniqueness_neglect"
+    },
+    {
+      "node": "ADVA",
+      "label": "AI-directed verbal aggressiveness",
+      "domain": "Interaction",
+      "wave1_column": "t1_ai_directed_verbal_aggressiveness",
+      "wave2_column": "t2_ai_directed_verbal_aggressiveness"
+    },
+    {
+      "node": "SD",
+      "label": "Self-disclosure",
+      "domain": "Interaction",
+      "wave1_column": "t1_self_disclosure",
+      "wave2_column": "t2_self_disclosure"
+    },
+    {
+      "node": "EWOM",
+      "label": "Chatbot electronic word of mouth",
+      "domain": "Interaction",
+      "wave1_column": "t1_chatbot_electronic_word_of_mouth",
+      "wave2_column": "t2_chatbot_electronic_word_of_mouth"
+    },
+    {
+      "node": "AHIE",
+      "label": "AI health information exposure",
+      "domain": "Interaction",
+      "wave1_column": "t1_ai_health_information_exposure",
+      "wave2_column": "t2_ai_health_information_exposure"
+    },
+    {
+      "node": "PFC",
+      "label": "Problem-focused coping",
+      "domain": "Interaction",
+      "wave1_column": "t1_problem_focused_coping",
+      "wave2_column": "t2_problem_focused_coping"
+    },
+    {
+      "node": "EFC",
+      "label": "Emotion-focused coping",
+      "domain": "Interaction",
+      "wave1_column": "t1_emotion_focused_coping",
+      "wave2_column": "t2_emotion_focused_coping"
+    },
+    {
+      "node": "IE",
+      "label": "Information elaboration",
+      "domain": "Interaction",
+      "wave1_column": "t1_information_elaboration",
+      "wave2_column": "t2_information_elaboration"
+    },
+    {
+      "node": "PCE",
+      "label": "Perceived cognitive empowerment",
+      "domain": "Interaction",
+      "wave1_column": "t1_perceived_cognitive_empowerment",
+      "wave2_column": "t2_perceived_cognitive_empowerment"
+    },
+    {
+      "node": "RHA",
+      "label": "Relief of health anxiety",
+      "domain": "Interaction",
+      "wave1_column": "t1_relief_of_health_anxiety",
+      "wave2_column": "t2_relief_of_health_anxiety"
+    },
+    {
+      "node": "ANG",
+      "label": "Anger",
+      "domain": "Interaction",
+      "wave1_column": "t1_anger",
+      "wave2_column": "t2_anger"
+    },
+    {
+      "node": "EDC",
+      "label": "AI-chatbot dependence",
+      "domain": "Interaction",
+      "wave1_column": "t1_ai_chatbot_dependence",
+      "wave2_column": "t2_ai_chatbot_dependence"
+    },
+    {
+      "node": "PSS",
+      "label": "Perceived social support",
+      "domain": "Context",
+      "wave1_column": "t1_perceived_social_support",
+      "wave2_column": "t2_perceived_social_support"
+    }
+  ],
+  "formal_nonparametric_bootstraps": 1000,
+  "formal_case_dropping_bootstraps": 1000
+}

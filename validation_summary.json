@@ -1,0 +1,40 @@
+{
+  "status": "Local numerical trial passed; owner authorized public GitHub release on 2026-09-18",
+  "participants": 2149,
+  "analysis_fields": 77,
+  "released_identifier": "new random identifier; no original-key mapping included",
+  "raw_questionnaire_files_included": false,
+  "item_response_matrix_included": false,
+  "measurement_scoring_code_included": false,
+  "unused_measurements_included": false,
+  "ml_models_refitted": 7,
+  "ml_performance_max_abs_difference": 8.326672684688674e-17,
+  "shap": {
+    "max_abs_importance_difference": 9.627715291671279e-17,
+    "top10_order_matches": true,
+    "prediction_baseline": 3.645229655128496,
+    "additivity_max_abs_difference": 5.15085925023584e-08
+  },
+  "clpn": {
+    "n": 2149,
+    "nodes_per_wave": 30,
+    "encoded_covariates": 61,
+    "max_abs_coefficient_difference": 2.60208521396521e-15,
+    "coefficients_match_1e_8": true,
+    "nonzero_cross_lagged_edges": 659,
+    "bootstrap_replicates_each": 0,
+    "max_abs_out_ei_difference": 1.63202784619898e-14,
+    "max_abs_in_ei_difference": 4.05231403988182e-15,
+    "max_abs_bridge_ei_difference": 1.63202784619898e-14
+  },
+  "network_preprocessing_max_abs_difference": 6.039613253960852e-14,
+  "bootstrap_smoke_replicates_each": 5,
+  "bootstrap_smoke_passed": true,
+  "formal_bootstrap_replicates_each": 1000,
+  "formal_bootstrap_rerun_completed": false,
+  "clean_directory_execution_completed": true,
+  "os_access_denial_sandbox_used": false,
+  "historical_hyperparameter_search_repeated": false,
+  "manuscript_and_submission_files_modified": false,
+  "public_upload_performed_during_numerical_validation": false
+}

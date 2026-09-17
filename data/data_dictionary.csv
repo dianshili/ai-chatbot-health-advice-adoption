@@ -1,0 +1,78 @@
+column,label,wave,domain,role,stage,missing_values
+t1_ai_chatbot_health_advice_adoption_intention,AI chatbot health-advice adoption intention,1,Outcome baseline,numeric,scoring complete; model preprocessing follows,0
+t1_ai_chatbot_use_frequency,AI chatbot use frequency,1,User,categorical,scoring complete; model preprocessing follows,0
+t1_fear_of_missing_out_on_generative_ai_technology,Fear of missing out on generative AI technology,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_ai_chatbot_use_intensity,AI chatbot use intensity,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_objective_ai_literacy,Objective AI literacy,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_subjective_ai_literacy,Subjective AI literacy,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_cyberchondria,Cyberchondria,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_loneliness,Loneliness,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_social_anxiety,Social anxiety,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_depressive_symptoms,Depressive symptoms,1,User,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_ai_deception_risk,Perceived AI deception risk,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_ai_chatbot_algorithmic_content_awareness,AI-chatbot algorithmic content awareness,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_ai_sycophancy,Perceived AI sycophancy,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_deepfake_risk,Perceived deepfake risk,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_ai_hallucination,Perceived AI hallucination,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_ai_information_privacy_concern,AI information privacy concern,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_chatbot_performance,Perceived chatbot performance,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_uniqueness_neglect,Uniqueness neglect,1,Agent,numeric,scoring complete; model preprocessing follows,0
+t1_ai_directed_verbal_aggressiveness,AI-directed verbal aggressiveness,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_self_disclosure,Self-disclosure,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_chatbot_electronic_word_of_mouth,Chatbot electronic word of mouth,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_ai_health_information_exposure,AI health information exposure,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_problem_focused_coping,Problem-focused coping,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_emotion_focused_coping,Emotion-focused coping,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_information_elaboration,Information elaboration,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_cognitive_empowerment,Perceived cognitive empowerment,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_relief_of_health_anxiety,Relief of health anxiety,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_anger,Anger,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_ai_chatbot_dependence,AI-chatbot dependence,1,Interaction,numeric,scoring complete; model preprocessing follows,0
+t1_gender,Gender,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_age,Age,1,Context,numeric,scoring complete; model preprocessing follows,0
+t1_province_of_residence,Province of residence,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_highest_education,Highest education,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_employment_status,Employment status,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_relationship_status,Relationship status,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_relationship_satisfaction,Relationship satisfaction,1,Context,numeric,scoring complete; model preprocessing follows,824
+t1_personal_monthly_income,Personal monthly income,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_household_annual_income,Household annual income,1,Context,categorical,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_obesity_or_high_blood_sugar,Self-reported physician-diagnosed condition: Obesity or high blood sugar,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_hypertension,Self-reported physician-diagnosed condition: Hypertension,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_heart_problems,Self-reported physician-diagnosed condition: Heart problems,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_chronic_lung_disease,Self-reported physician-diagnosed condition: Chronic lung disease,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_arthritis_or_rheumatism,Self-reported physician-diagnosed condition: Arthritis or rheumatism,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_self_reported_physician_diagnosed_condition_depression_or_anxiety_disorder,Self-reported physician-diagnosed condition: Depression or anxiety disorder,1,Context,binary condition indicator,scoring complete; model preprocessing follows,0
+t1_height,Height,1,Context,numeric,scoring complete; model preprocessing follows,0
+t1_weight,Weight,1,Context,numeric,scoring complete; model preprocessing follows,0
+t1_perceived_social_support,Perceived social support,1,Context,numeric,scoring complete; model preprocessing follows,0
+t2_ai_chatbot_health_advice_adoption_intention,AI chatbot health-advice adoption intention,2,Outcome,outcome,scoring complete; model preprocessing follows,0
+t2_ai_chatbot_use_frequency,AI chatbot use frequency,2,User,network node,scoring complete; model preprocessing follows,0
+t2_fear_of_missing_out_on_generative_ai_technology,Fear of missing out on generative AI technology,2,User,network node,scoring complete; model preprocessing follows,0
+t2_ai_chatbot_use_intensity,AI chatbot use intensity,2,User,network node,scoring complete; model preprocessing follows,0
+t2_objective_ai_literacy,Objective AI literacy,2,User,network node,scoring complete; model preprocessing follows,0
+t2_subjective_ai_literacy,Subjective AI literacy,2,User,network node,scoring complete; model preprocessing follows,0
+t2_cyberchondria,Cyberchondria,2,User,network node,scoring complete; model preprocessing follows,0
+t2_loneliness,Loneliness,2,User,network node,scoring complete; model preprocessing follows,0
+t2_social_anxiety,Social anxiety,2,User,network node,scoring complete; model preprocessing follows,0
+t2_depressive_symptoms,Depressive symptoms,2,User,network node,scoring complete; model preprocessing follows,0
+t2_perceived_ai_deception_risk,Perceived AI deception risk,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_ai_chatbot_algorithmic_content_awareness,AI-chatbot algorithmic content awareness,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_perceived_ai_sycophancy,Perceived AI sycophancy,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_perceived_deepfake_risk,Perceived deepfake risk,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_perceived_ai_hallucination,Perceived AI hallucination,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_ai_information_privacy_concern,AI information privacy concern,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_perceived_chatbot_performance,Perceived chatbot performance,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_uniqueness_neglect,Uniqueness neglect,2,Agent,network node,scoring complete; model preprocessing follows,0
+t2_ai_directed_verbal_aggressiveness,AI-directed verbal aggressiveness,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_self_disclosure,Self-disclosure,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_chatbot_electronic_word_of_mouth,Chatbot electronic word of mouth,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_ai_health_information_exposure,AI health information exposure,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_problem_focused_coping,Problem-focused coping,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_emotion_focused_coping,Emotion-focused coping,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_information_elaboration,Information elaboration,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_perceived_cognitive_empowerment,Perceived cognitive empowerment,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_relief_of_health_anxiety,Relief of health anxiety,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_anger,Anger,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_ai_chatbot_dependence,AI-chatbot dependence,2,Interaction,network node,scoring complete; model preprocessing follows,0
+t2_perceived_social_support,Perceived social support,2,Context,network node,scoring complete; model preprocessing follows,0

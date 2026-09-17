@@ -1,0 +1,8 @@
+R 4.6.0 (aarch64) was used for this local trial.
+glmnet 5.0
+bootnet 1.8
+networktools 1.6.0
+qgraph 1.9.8
+jsonlite 2.0.0
+
+Install packages separately; the reproduction script never installs packages.
